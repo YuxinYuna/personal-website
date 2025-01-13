@@ -38,7 +38,7 @@ const Hero = () => {
             ]}
             speed={50}
             repeat={Infinity}
-            className="font-bold text-gray-400 text-xl md:text-5xl italic mb-4" />
+            className="font-bold text-gray-400 text-3xl md:text-5xl italic mb-4" />
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -70,9 +70,9 @@ const Hero = () => {
                   scale: 1.05,
                   boxShadow: "0px 0px 8px rgba(0,0,0,0.3)",
                 }}
-                className="z-10 cursor-pointer font-bold text-gray-200 md:w-auto p-4 border border-purple-400 rounded-xl"
-                href="/assets/Yuxin_Shi_Resume.pdf" // Path to your resume in the public folder
-                download="Yuxin_Shi_Resume.pdf" // File name for the downloaded file
+                className="z-10 cursor-pointer font-bold text-gray-100 md:w-auto p-4 rounded-xl button-bg"
+                href="/assets/Yuxin_Shi_Resume.pdf" 
+                download="Yuxin_Shi_Resume.pdf" 
               >
                 Download CV
               </motion.a>
@@ -117,9 +117,8 @@ const Hero = () => {
 
       </motion.div>
       <div className="absolute inset-0 hidden md:block">
-        <ShinyEffect left={0} top={0} size={1200}/>
+        <ShinyEffect left={0} top={-600} size={1200}/>
       </div>
-
     </div>
   )
 }

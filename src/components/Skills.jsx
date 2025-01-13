@@ -44,15 +44,15 @@ const skills = [
       { name: 'Matplotlib', icon: <SiPlotly className='text-green-500' /> },
     ],
   },
-  {
-    category: 'Tools',
-    technologies: [
-      { name: 'Git', icon: <DiGit className='text-red-500' /> },
-      { name: 'IntelliJ', icon: <SiIntellijidea  className='text-pink-500' /> },
-      { name: 'VS Code', icon: <DiVisualstudio className='text-blue-500' /> },
-      { name: 'PyCharm', icon: <SiPycharm className='text-green-600' /> },
-    ],
-  },
+  // {
+  //   category: 'Tools',
+  //   technologies: [
+  //     { name: 'Git', icon: <DiGit className='text-red-500' /> },
+  //     { name: 'IntelliJ', icon: <SiIntellijidea  className='text-pink-500' /> },
+  //     { name: 'VS Code', icon: <DiVisualstudio className='text-blue-500' /> },
+  //     { name: 'PyCharm', icon: <SiPycharm className='text-green-600' /> },
+  //   ],
+  // },
   {
     category: 'Languages',
     technologies: [
@@ -68,10 +68,10 @@ const skills = [
 
 const Skills = () => {
   return (
-    <div className="max-w-[1000px] mx-auto flex flex-col justify-center px-4 text-gray-200 pb-8 md:py-12" id="skills">
+    <div className="max-w-[1300px] mx-auto flex flex-col justify-center px-4 text-gray-200 pb-8 md:py-12" id="skills">
         <Reveal>
         <h1 className="text-3xl font-bold mb-4 text-center">Skills</h1>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 justify-center
                         ">
             {skills.map((skill, index) => (
                 <div key={index} className="border border-purple-900 p-6 rounded-lg bg-purple-900/20 shadow-lg">
