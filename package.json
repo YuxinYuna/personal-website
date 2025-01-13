@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "postbuild": "cp src/assets/Yuxin_Shi_Resume.pdf dist/assets/"
   },
   "dependencies": {
     "framer-motion": "^11.15.0",
