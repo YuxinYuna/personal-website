@@ -1,27 +1,47 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React,{useState,useEffect} from "react";
 import profilepic from "../assets/beauty.JPG";
 import { TypeAnimation } from "react-type-animation";
 import ShinyEffect from "./ShinyEffect";
+import { MdKeyboardDoubleArrowDown } from "react-icons/md";
+
 import {
   AiOutlineGithub,
   AiOutlineInstagram,
   AiOutlineLink,
   AiOutlineLinkedin,
 } from "react-icons/ai";
-import {
-  DiCss3,
-  DiHtml5,
-  DiJavascript1,
-  DiNodejsSmall,
-  DiReact,
-} from "react-icons/di";
+// import {
+//   DiCss3,
+//   DiHtml5,
+//   DiJavascript1,
+//   DiNodejsSmall,
+//   DiReact,
+// } from "react-icons/di";
 import { motion } from "framer-motion";
 
 const Hero = () => {
+  const [showScrollIcon, setShowScrollIcon] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Hide the icon when scrolled down
+      if (window.scrollY > 100) {
+        setShowScrollIcon(false);
+      } else {
+        setShowScrollIcon(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <div className="mt-24 max-w-[1200px] mx-auto relative">
-      <div className="grid md:grid-cols-2 place-items-center gap-10">
+      <div className=" h-screen grid md:grid-cols-2 place-items-center gap-10 px-1">
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -55,7 +75,7 @@ const Hero = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 1 }}
-            className="text-gray-300 max-w-[300px] md:max-w-[500px] md:text-2xl text-1g mb-6">
+            className="text-gray-300 max-w-[300px] md:max-w-[500px] md:text-lg text-base mb-6">
               I&apos;m a passionate Full-Stack Developer and Data Engineer, skilled in AI-driven platforms, cloud architectures, and data analytics.
 
           </motion.p>
@@ -100,7 +120,7 @@ const Hero = () => {
 
         
       </div>
-      <motion.div
+      {/* <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1}}
       viewport={{ once: true }}
@@ -112,10 +132,24 @@ const Hero = () => {
         <DiJavascript1 className="text-yellow-500 mx-2"/>
         <DiReact className="text-green-500 mx-2"/>
         <DiNodejsSmall className="text-purple-200 mx-2"/>
-        {/* <DiPython className="text-pink-500 mx-2"/> */}
+        <DiPython className="text-pink-500 mx-2"/>
 
 
-      </motion.div>
+      </motion.div> */}
+      {showScrollIcon &&(
+        <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 2 }}
+        className="absolute bottom-32 flex justify-center w-full"
+        >
+          <a href="#next-section" className="flex flex-col items-center cursor-pointer">
+            <MdKeyboardDoubleArrowDown className="text-gray-50 text-6xl animate-bounce" />
+          </a>
+        </motion.div>
+
+      )
+      }
       <div className="absolute inset-0 hidden md:block">
         <ShinyEffect left={0} top={-600} size={1200}/>
       </div>

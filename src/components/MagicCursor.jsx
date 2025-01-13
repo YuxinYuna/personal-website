@@ -26,8 +26,8 @@ const MagicCursor = () => {
     class Particle {
       constructor(x, y) {
         const speedMultiplier = 0.5; // Adjust this value to control speed globally
-        this.speedX = random(-1, 1) * speedMultiplier;
-        this.speedY = random(-1, 1) * speedMultiplier;
+        this.speedX = random(-1.5, 1.5) * speedMultiplier;
+        this.speedY = random(-1.5, 1.5) * speedMultiplier;
         this.x = x;
         this.y = y;
         this.size = random(0.1,2); // Particle size
@@ -58,7 +58,7 @@ const MagicCursor = () => {
     const handleMouseMove = (event) => {
       if (!hideCursorRef.current) {
         const { clientX, clientY } = event;
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < 5; i++) {
           particles.push(new Particle(clientX, clientY));
         }
       }
