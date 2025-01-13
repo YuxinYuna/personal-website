@@ -71,7 +71,7 @@ const Hero = () => {
                   boxShadow: "0px 0px 8px rgba(0,0,0,0.3)",
                 }}
                 className="z-10 cursor-pointer font-bold text-gray-100 md:w-auto p-4 rounded-xl button-bg"
-                href="/assets/Yuxin_Shi_Resume.pdf" 
+                href="/personal-website/assets/Yuxin_Shi_Resume.pdf" 
                 download="Yuxin_Shi_Resume.pdf" 
               >
                 Download CV
